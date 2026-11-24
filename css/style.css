@@ -72,6 +72,8 @@ body.high-contrast {
 html {
   font-size: calc(16px * var(--font-scale));
   scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -83,6 +85,14 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+:where(a, code) {
+  overflow-wrap: anywhere;
 }
 
 /* Accessible Skip Link */
@@ -229,6 +239,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 0;
 }
 
 .state-emblem-svg {
@@ -240,11 +251,13 @@ body {
 .brand-text-block {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .portal-name-row {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
@@ -935,7 +948,9 @@ fieldset[hidden] {
 .income-row-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -1411,9 +1426,11 @@ fieldset[hidden] {
 }
 
 /* ==========================================================================
-   11. Responsive Media Queries
+   11. Responsive Media Queries (Mobile & Tablet Layouts)
    ========================================================================== */
-@media (max-width: 900px) {
+
+/* Tablet & Smaller Desktops (<= 992px) */
+@media (max-width: 992px) {
   .categories-grid, .steps-cards-row, .footer-top-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1428,28 +1445,372 @@ fieldset[hidden] {
     display: none;
   }
   .hero-main-title {
-    font-size: 1.85rem;
+    font-size: 1.95rem;
   }
 }
 
-@media (max-width: 600px) {
+/* Tablet & Mobile Landscape (<= 768px) */
+@media (max-width: 768px) {
+  .section-padding {
+    padding-block: 2.25rem 2rem;
+  }
+  .hero-portal-section {
+    padding-block: 2rem 1.75rem;
+  }
+  .hero-main-title {
+    font-size: 1.7rem;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .hero-action-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hero-action-buttons .gov-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-trust-notes {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Devices & Phones (<= 640px) */
+@media (max-width: 640px) {
+  /* Top Accessibility Bar */
+  .top-bar-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding-block: 0.4rem;
+  }
+  .gov-identity {
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+  .accessibility-tools {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    font-size: 0.72rem;
+  }
+  .tool-group {
+    gap: 0.2rem;
+  }
+
+  /* Branding Header */
+  .main-header {
+    padding-block: 0.75rem;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .brand-emblem-group {
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .state-emblem-svg {
+    width: 44px;
+    height: 50px;
+  }
+  .portal-name-row {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .portal-title-en {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+  .portal-title-hi {
+    font-size: 1.15rem;
+    line-height: 1.15;
+  }
+  .portal-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  .portal-tagline {
+    display: none;
+  }
+
+  /* Navigation Bar */
+  .nav-item a, .nav-item button {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.84rem;
+  }
+
+  /* Assessment Desk & Stepper Overlapping Fix */
+  .desk-body {
+    padding: 1.25rem 0.85rem;
+  }
+  .desk-header {
+    padding: 1.25rem 0.85rem;
+  }
+  .desk-title {
+    font-size: 1.35rem;
+    text-wrap: balance;
+  }
+  .desk-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Stepper Progress Bar: Clean Grid Tile Layout (No Overlapping Lines or Text) */
+  .gov-stepper-tracker {
+    margin-bottom: 1.5rem;
+  }
+  .stepper-progress-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+    position: static;
+  }
+  .step-connector-line {
+    display: none !important; /* Eliminates connector line overlap */
+  }
+  .step-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.25rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-xs);
+    min-width: 0;
+    width: 100%;
+    transition: all 0.2s ease;
+  }
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .step-label {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+  .step-node.active {
+    background-color: #fff7ed;
+    border-color: var(--gov-saffron);
+  }
+  .step-node.completed {
+    background-color: #f0fdf4;
+    border-color: var(--gov-green);
+  }
+
+  /* Slide Header Banner */
+  .slide-header-banner {
+    padding: 0.75rem 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+  .slide-title-text {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .slide-desc-text {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  /* Form Elements */
   .form-grid-2col {
     grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  .gov-input, .gov-select {
+    font-size: 0.95rem;
+    min-height: 48px;
+  }
+
+  /* Income Box & Scale */
+  .income-control-box {
+    padding: 1rem 0.85rem;
+  }
+  .income-row-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+  .income-current-badge {
+    font-size: 1rem;
+    padding: 0.15rem 0.55rem;
+    align-self: flex-start;
+  }
+  .range-scale-ticks {
+    font-size: 0.65rem;
+  }
+
+  /* Toggle Switches Stack */
+  .toggles-stack {
+    padding: 1rem 0.85rem;
+    gap: 0.85rem;
+  }
+  .gov-switch-label {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .switch-visual-track {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .switch-caption {
+    font-size: 0.86rem;
+    line-height: 1.35;
+  }
+
+  /* Wizard Navigation Buttons Fix (Full Width Stack, No Horizontal Collisions) */
+  .wizard-button-bar {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+  .wizard-button-bar div {
+    width: 100%;
+  }
+  .wizard-button-bar .gov-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.92rem;
+    padding-inline: 1rem;
+    text-align: center;
+    min-height: 48px;
+  }
+
+  /* Results Section */
+  .results-gazette-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 1rem 0.85rem;
+  }
+  .results-counter-title {
+    font-size: 1.25rem;
+  }
+  .btn-reassess {
+    width: 100%;
+    text-align: center;
+    padding: 0.65rem 1rem;
+    min-height: 44px;
+  }
+
+  /* Schemes Directory Search & Status Bar Overlapping Fix */
+  .directory-search-status-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  #directoryActiveBadge {
+    align-self: flex-start;
+  }
+  .filter-tabs-row {
+    padding-bottom: 0.4rem;
+  }
+  .filter-tab-pill {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.76rem;
+  }
+
+  /* Scheme Cards */
+  .official-scheme-card {
+    padding: 1rem;
+    gap: 0.85rem;
+  }
+  .card-scheme-name {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .card-scheme-desc {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+  .card-benefit-strip {
+    padding: 0.5rem 0.65rem;
+  }
+  .benefit-strip-value {
+    font-size: 0.82rem;
+  }
+  .card-footer-action {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .official-portal-link {
+    font-size: 0.82rem;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  /* View More Pagination Dock */
+  .directory-view-more-dock {
+    margin-top: 1.75rem;
+    width: 100%;
+  }
+  #btnDirectoryViewMore {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* Footer */
+  .official-gov-footer {
+    padding-block: 2rem 1rem;
+  }
+  .footer-bottom-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Small Smart Phones (<= 380px) */
+@media (max-width: 380px) {
+  .portal-title-en {
+    font-size: 1.25rem;
+  }
+  .portal-title-hi {
+    font-size: 1rem;
+  }
+  .state-emblem-svg {
+    width: 36px;
+    height: 42px;
+  }
+  .step-label {
+    font-size: 0.64rem;
+  }
+  .step-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 0.72rem;
   }
   .stats-grid {
     grid-template-columns: 1fr;
   }
-  .desk-body {
-    padding: 1.25rem 1rem;
-  }
-  .portal-title-en {
-    font-size: 1.45rem;
-  }
-  .portal-title-hi {
-    font-size: 1.15rem;
-  }
-  .top-bar-inner {
-    flex-direction: column;
-    align-items: flex-start;
+  .range-scale-ticks span:nth-child(2),
+  .range-scale-ticks span:nth-child(4) {
+    display: none; /* Hide 2.5L and 7.5L ticks on ultra-narrow viewports to prevent collision */
   }
 }
