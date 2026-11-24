@@ -12,7 +12,11 @@ try:
         assert "Scheme" in html and "Setu" in html
         assert "Personal" in html and "Financial" in html and "Residency" in html
         assert "eligibilityForm" in html
-        print("[PASS] GET / -> HTTP 200, Web page loaded successfully")
+        assert "directorySearch" in html, "directorySearch input must exist"
+        assert "btnDirectoryViewMore" in html, "btnDirectoryViewMore must exist"
+        assert "directoryGrid" in html, "directoryGrid must exist"
+        assert "emptyDirectoryNotice" in html, "emptyDirectoryNotice must exist"
+        print("[PASS] GET / -> HTTP 200, Web page loaded successfully with directory search & view more controls")
 except Exception as e:
     print("[FAIL] GET / ->", e)
 
