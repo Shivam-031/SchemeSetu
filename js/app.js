@@ -448,8 +448,8 @@
       elements.btnNext.classList.add('hidden');
       elements.btnSubmit.classList.remove('hidden');
       elements.btnSubmit.textContent = isHi
-        ? 'योजना पात्रता की गणना करें (147 योजनाएं) ✓'
-        : 'Evaluate Scheme Eligibility (Check 147 Schemes) ✓';
+        ? 'योजना पात्रता की गणना करें ✓'
+        : 'Evaluate Scheme Eligibility ✓';
     }
   }
 
@@ -823,16 +823,16 @@
     const isHi = state.currentLang === 'hi';
     const dict = window.I18N[state.currentLang] || window.I18N.en;
 
-    // 1. Update Directory Counter & Status
+    // 1. Update Directory Counter & Status (without exposing total database count)
     if (elements.directoryCounter) {
       if (state.directorySearchQuery) {
         elements.directoryCounter.textContent = isHi
-          ? `खोज परिणाम: कुल ${state.allSchemes.length} में से ${totalCount} योजनाएं पाई गईं`
-          : `Search Results: Found ${totalCount} of ${state.allSchemes.length} schemes`;
+          ? `खोज परिणाम: ${totalCount} योजनाएं पाई गईं`
+          : `Search Results: Found ${totalCount} matching schemes`;
       } else {
         elements.directoryCounter.textContent = isHi
-          ? `इस श्रेणी में कुल ${totalCount} योजनाएं उपलब्ध हैं`
-          : `Total ${totalCount} schemes cataloged in this sector`;
+          ? `चयनित श्रेणी में उपलब्ध योजनाएं`
+          : `Browsing verified welfare schemes`;
       }
     }
 
@@ -886,34 +886,32 @@
     if (elements.directoryViewMoreDock) {
       elements.directoryViewMoreDock.classList.remove('hidden');
 
-      // Update progress text (e.g. "Showing 10 of 147 schemes")
+      // Update progress text without exposing total database count
       if (elements.directoryProgressText) {
         elements.directoryProgressText.textContent = isHi
-          ? `कुल ${totalCount} में से ${visibleCount} योजनाएं प्रदर्शित`
-          : `Showing ${visibleCount} of ${totalCount} schemes`;
+          ? `${visibleCount} योजनाएं प्रदर्शित`
+          : `Showing ${visibleCount} schemes`;
       }
 
       // Check if more schemes can be loaded
       if (visibleCount < totalCount) {
         elements.btnDirectoryViewMore.classList.remove('hidden');
-        const remaining = totalCount - visibleCount;
-        const nextBatch = Math.min(state.directoryPageSize, remaining);
 
         elements.btnDirectoryViewMoreText.textContent = isHi
-          ? `और योजनाएं देखें (+${nextBatch}) ↓`
-          : `View More Schemes (+${nextBatch}) ↓`;
+          ? `और योजनाएं देखें ↓`
+          : `View More Schemes ↓`;
       } else {
         // All schemes in this filtered set are displayed
         elements.btnDirectoryViewMore.classList.add('hidden');
         if (elements.directoryProgressText) {
           if (totalCount > 10) {
             elements.directoryProgressText.textContent = isHi
-              ? `सभी ${totalCount} योजनाएं सफलतापूर्वक लोड हो गईं ✓`
-              : `All ${totalCount} schemes loaded successfully ✓`;
+              ? `सभी उपलब्ध योजनाएं सफलतापूर्वक लोड हो गईं ✓`
+              : `All available schemes loaded successfully ✓`;
           } else {
             elements.directoryProgressText.textContent = isHi
-              ? `कुल सभी ${totalCount} योजनाएं प्रदर्शित हैं`
-              : `Showing all ${totalCount} schemes`;
+              ? `सभी मिलान करने वाली योजनाएं प्रदर्शित हैं`
+              : `Showing all matching schemes`;
           }
         }
       }

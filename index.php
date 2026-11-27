@@ -97,7 +97,7 @@
       <ul class="nav-links-list">
         <li class="nav-item active"><a href="#heroSection" data-i18n="navHome">Home</a></li>
         <li class="nav-item"><a href="#assessmentDesk" data-i18n="navEligibility">Check Eligibility</a></li>
-        <li class="nav-item"><a href="#schemesDirectorySection" data-i18n="navBrowse">Browse All 147 Schemes</a></li>
+        <li class="nav-item"><a href="#schemesDirectorySection" data-i18n="navBrowse">Browse All Schemes</a></li>
         <li class="nav-item"><a href="#categoriesSection" data-i18n="navCategories">Categories</a></li>
         <li class="nav-item"><a href="#howItWorksSection" data-i18n="navHowItWorks">How It Works</a></li>
         <li class="nav-item"><a href="#footerSection" data-i18n="navFaq">Help & Project Details</a></li>
@@ -117,11 +117,11 @@
           </div>
           <h1 class="hero-main-title" data-i18n="heroTitle">Find Government Welfare Schemes You Are Eligible For</h1>
           <p class="hero-description" data-i18n="heroSubtitle">
-            A unified, machine-checkable platform evaluating citizen profiles against 147 Central and State Government welfare programs in under 2 minutes.
+            A unified, machine-checkable platform evaluating citizen profiles against Central and State Government welfare programs in under 2 minutes.
           </p>
           <div class="hero-action-buttons">
             <a href="#assessmentDesk" class="gov-btn gov-btn-primary" data-i18n="heroCtaCheck">Check Scheme Eligibility</a>
-            <a href="#schemesDirectorySection" class="gov-btn gov-btn-secondary" data-i18n="heroCtaBrowse">Browse 147 Schemes Directory</a>
+            <a href="#schemesDirectorySection" class="gov-btn gov-btn-secondary" data-i18n="heroCtaBrowse">Browse Schemes Directory</a>
           </div>
           <p class="hero-trust-notes">
             <span aria-hidden="true">🔒</span>
@@ -136,12 +136,12 @@
       <div class="gov-container">
         <div class="stats-grid">
           <div class="stat-cell">
-            <div class="stat-number" data-i18n="statSchemesCount">147</div>
+            <div class="stat-number" data-i18n="statSchemesCount">Central &amp; State</div>
             <div class="stat-title" data-i18n="statSchemesLabel">Welfare Schemes Cataloged</div>
           </div>
           <div class="stat-cell">
-            <div class="stat-number" data-i18n="statCentralCount">50+</div>
-            <div class="stat-title" data-i18n="statCentralLabel">Flagship Central Programs</div>
+            <div class="stat-number" data-i18n="statCentralCount">Verified</div>
+            <div class="stat-title" data-i18n="statCentralLabel">Official Government Portals</div>
           </div>
           <div class="stat-cell">
             <div class="stat-number" data-i18n="statStatesCount">28 States & UTs</div>
@@ -254,7 +254,7 @@
           <div class="how-step-card">
             <span class="step-index-badge">STEP 02</span>
             <h3 data-i18n="howStep2Title">2. Rule Engine Evaluates</h3>
-            <p data-i18n="howStep2Desc">Our automated decision engine cross-references your inputs against the eligibility criteria of all 147 cataloged schemes.</p>
+            <p data-i18n="howStep2Desc">Our automated decision engine cross-references your inputs against the eligibility criteria of all cataloged welfare schemes.</p>
           </div>
           <div class="how-step-card">
             <span class="step-index-badge">STEP 03</span>
@@ -271,7 +271,7 @@
         <div class="desk-container-card">
           <div class="desk-header">
             <h2 class="desk-title" data-i18n="wizardHeading">Citizen Welfare Eligibility Assessment</h2>
-            <p class="desk-subtitle" data-i18n="wizardSubheading">Answer six basic questions. The decision rule engine will compute your eligibility across all 147 schemes instantly.</p>
+            <p class="desk-subtitle" data-i18n="wizardSubheading">Answer six basic questions. The decision rule engine will compute your eligibility across all cataloged schemes instantly.</p>
           </div>
 
           <div class="desk-body">
@@ -497,7 +497,7 @@
                     <span data-i18n="resultsHeadingPrefix">Assessment Results: You are eligible for</span>
                     <span id="eligibleCount" class="eligible-count-number">0 schemes</span>
                   </h3>
-                  <p class="results-verified-note" data-i18n="resultsCheckedNote">evaluated out of 147 government welfare schemes in database</p>
+                  <p class="results-verified-note" data-i18n="resultsCheckedNote">evaluated across our government welfare schemes database</p>
                 </div>
                 <button type="button" id="btnStartOver" class="btn-reassess" data-i18n="btnStartOver">
                   Re-assess New Profile
@@ -543,17 +543,17 @@
       </div>
     </section>
 
-    <!-- 9. Complete Schemes Directory (All 147 Schemes Explorer) -->
+    <!-- 9. Complete Schemes Directory -->
     <section class="section-padding" id="schemesDirectorySection" style="background-color: #ffffff; border-top: 1px solid var(--gov-border);">
       <div class="gov-container">
         <div class="section-header-block">
-          <h2 class="section-main-title" data-i18n="directoryTitle">Government Schemes Repository (147 Schemes)</h2>
+          <h2 class="section-main-title" data-i18n="directoryTitle">Government Schemes Repository</h2>
           <p class="section-sub-desc" data-i18n="directorySubtitle">Complete public registry of Central and State Government welfare programs</p>
         </div>
 
         <!-- Directory Filter Tabs -->
         <div class="filter-tabs-row" id="directoryFilterTabs" role="tablist" aria-label="Directory Sector Filters">
-          <button type="button" class="filter-tab-pill active" data-sector="all" data-i18n="filterAll">All Sectors (147)</button>
+          <button type="button" class="filter-tab-pill active" data-sector="all" data-i18n="filterAll">All Sectors</button>
           <button type="button" class="filter-tab-pill" data-sector="Farmer" data-i18n="filterAgri">Agriculture</button>
           <button type="button" class="filter-tab-pill" data-sector="Health" data-i18n="filterHealth">Health & Insurance</button>
           <button type="button" class="filter-tab-pill" data-sector="Student" data-i18n="filterEdu">Education</button>
@@ -571,7 +571,7 @@
               type="search"
               id="directorySearch"
               class="search-input-gov"
-              placeholder="Search all 147 schemes by name, keyword, or benefits..."
+              placeholder="Search schemes by name, keyword, or benefits..."
               autocomplete="off"
               aria-label="Search all government schemes repository"
               data-i18n-placeholder="directorySearchPlaceholder"
@@ -581,7 +581,7 @@
           <div class="directory-search-status-bar" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.825rem; color: #475569; padding-inline: 0.25rem;">
             <div id="directoryCounter" role="status" aria-live="polite" style="font-weight: 600;"></div>
             <div id="directoryActiveBadge" style="font-size: 0.75rem; background-color: #f1f5f9; padding: 0.2rem 0.55rem; border-radius: var(--radius-xs); border: 1px solid #cbd5e1; font-weight: 600; color: var(--gov-navy);">
-              <span data-i18n="dirActiveView">Active View:</span> <span id="directoryActiveSectorName" data-i18n="filterAll">All Sectors (147)</span>
+              <span data-i18n="dirActiveView">Active View:</span> <span id="directoryActiveSectorName" data-i18n="filterAll">All Sectors</span>
             </div>
           </div>
         </search>
@@ -604,7 +604,7 @@
             <span id="btnDirectoryViewMoreText" data-i18n="btnViewMore">View More Schemes (+10) ↓</span>
           </button>
           <div id="directoryProgressText" style="font-size: 0.85rem; color: #475569; font-weight: 600;" role="status" aria-live="polite">
-            Showing 10 of 147 schemes
+            Showing 10 schemes
           </div>
         </div>
       </div>

@@ -34,16 +34,16 @@ const I18N = {
     // Hero Section
     heroBadge: "MINISTRY LEVEL CITIZEN BENEFIT DISCOVERY INITIATIVE",
     heroTitle: "Find Government Welfare Schemes You Are Eligible For",
-    heroSubtitle: "A unified, machine-checkable platform evaluating citizen profiles against 147 Central and State Government welfare programs in under 2 minutes.",
+    heroSubtitle: "A unified, machine-checkable platform evaluating citizen profiles against Central and State Government welfare programs in under 2 minutes.",
     heroCtaCheck: "Check Scheme Eligibility",
-    heroCtaBrowse: "Browse 147 Schemes Directory",
+    heroCtaBrowse: "Browse Schemes Directory",
     heroSecuredNote: "Rule-Based Evaluation • No Aadhaar or Personal Identifiers Stored • 100% Free Public Service",
 
     // Stats Bar
-    statSchemesCount: "147",
+    statSchemesCount: "Central & State",
     statSchemesLabel: "Welfare Schemes Cataloged",
-    statCentralCount: "50+",
-    statCentralLabel: "Flagship Central Programs",
+    statCentralCount: "Verified",
+    statCentralLabel: "Official Government Portals",
     statStatesCount: "28 States & UTs",
     statStatesLabel: "Coverage Across India",
     statCostCount: "100% Free",
@@ -71,13 +71,13 @@ const I18N = {
     howStep1Title: "1. Enter Citizen Details",
     howStep1Desc: "Provide essential demographic details: age, social category, occupation, income bracket, and rural/urban residency.",
     howStep2Title: "2. Rule Engine Evaluates",
-    howStep2Desc: "Our automated decision engine cross-references your inputs against the eligibility criteria of all 147 cataloged schemes.",
+    howStep2Desc: "Our automated decision engine cross-references your inputs against the eligibility criteria of all cataloged welfare schemes.",
     howStep3Title: "3. Access Benefits & Portals",
     howStep3Desc: "Review tailored scheme summaries, financial assistance details, and navigate directly to official government portals to apply.",
 
     // Wizard Section
     wizardHeading: "Citizen Welfare Eligibility Assessment Desk",
-    wizardSubheading: "Follow the 3 dedicated slides below. Complete each slide to evaluate your exact eligibility across 147 schemes.",
+    wizardSubheading: "Follow the 3 dedicated slides below. Complete each slide to evaluate your exact eligibility across government schemes.",
     stepPersonal: "Personal Details",
     stepFinancial: "Financial Details",
     stepResidency: "Residency & Land",
@@ -140,7 +140,7 @@ const I18N = {
     // Results Section
     resultsHeadingPrefix: "Assessment Results: You are eligible for",
     resultsHeadingSuffix: "schemes",
-    resultsCheckedNote: "evaluated out of 147 government welfare schemes in database",
+    resultsCheckedNote: "evaluated across our government welfare schemes database",
     btnStartOver: "Re-assess New Profile",
     searchPlaceholder: "Search eligible schemes by keyword (e.g. kisan, pension, loan, grant)...",
     btnClear: "Clear Search",
@@ -152,9 +152,9 @@ const I18N = {
     noEligibleFoundDesc: "Welfare programs often target specific vulnerable demographics. Try adjusting criteria to check for other household members (e.g., student children, elderly parents, or women members).",
 
     // All Schemes Directory View
-    directoryTitle: "Government Schemes Repository (147 Schemes)",
+    directoryTitle: "Government Schemes Repository",
     directorySubtitle: "Complete public registry of Central and State Government welfare programs",
-    filterAll: "All Sectors (147)",
+    filterAll: "All Sectors",
     filterAgri: "Agriculture",
     filterHealth: "Health & Insurance",
     filterEdu: "Education",
@@ -162,7 +162,7 @@ const I18N = {
     filterSocial: "Social Security",
     filterUrban: "Urban & Vendors",
     filterArtisan: "Artisans & MSME",
-    directorySearchPlaceholder: "Search all 147 schemes by name, keyword, or benefits...",
+    directorySearchPlaceholder: "Search schemes by name, keyword, or benefits...",
     btnClearDir: "Clear Search",
     btnViewMore: "View More Schemes (+10) ↓",
     dirActiveView: "Active View:",
@@ -209,7 +209,7 @@ const I18N = {
     // Navigation Menu
     navHome: "मुख्य पृष्ठ",
     navEligibility: "पात्रता जांचें",
-    navBrowse: "सभी 147 योजनाएं देखें",
+    navBrowse: "सभी योजनाएं देखें",
     navCategories: "कल्याणकारी श्रेणियां",
     navHowItWorks: "कार्यप्रणाली",
     navFaq: "सहायता केंद्र",
@@ -217,16 +217,16 @@ const I18N = {
     // Hero Section
     heroBadge: "नागरिक कल्याण लाभ पहचान राष्ट्रीय पहल",
     heroTitle: "अपनी पात्रता के अनुसार सरकारी कल्याणकारी योजनाएं खोजें",
-    heroSubtitle: "एक एकीकृत, नियम-आधारित मंच जो 2 मिनट से भी कम समय में 147 केंद्रीय एवं राज्य स्तरीय सरकारी योजनाओं में आपकी पात्रता की जांच करता है।",
+    heroSubtitle: "एक एकीकृत, नियम-आधारित मंच जो 2 मिनट से भी कम समय में केंद्रीय एवं राज्य स्तरीय सरकारी योजनाओं में आपकी पात्रता की जांच करता है।",
     heroCtaCheck: "योजना पात्रता की जांच करें",
-    heroCtaBrowse: "147 योजनाओं की सूची देखें",
+    heroCtaBrowse: "योजनाओं की सूची देखें",
     heroSecuredNote: "पारदर्शी नियम-आधारित मूल्यांकन • कोई व्यक्तिगत आधार डेटा एकत्र नहीं किया जाता • पूर्णतः निःशुल्क जनसेवा",
 
     // Stats Bar
-    statSchemesCount: "147",
+    statSchemesCount: "केंद्रीय व राज्य",
     statSchemesLabel: "पंजीकृत सरकारी योजनाएं",
-    statCentralCount: "50+",
-    statCentralLabel: "प्रमुख केंद्रीय योजनाएं",
+    statCentralCount: "सत्यापित",
+    statCentralLabel: "आधिकारिक सरकारी पोर्टल",
     statStatesCount: "28 राज्य व यू.टी.",
     statStatesLabel: "अखिल भारतीय विस्तार",
     statCostCount: "100% निःशुल्क",
@@ -254,7 +254,7 @@ const I18N = {
     howStep1Title: "1. बुनियादी विवरण दर्ज करें",
     howStep1Desc: "अपनी आयु, लिंग, सामाजिक श्रेणी, व्यवसाय, वार्षिक पारिवारिक आय और निवास क्षेत्र दर्ज करें।",
     howStep2Title: "2. नियम इंजन द्वारा जांच",
-    howStep2Desc: "हमारा स्वचालित डिसीजन इंजन डेटाबेस में उपलब्ध सभी 147 योजनाओं के पात्रता नियमों से आपके प्रोफाइल का मिलान करता है।",
+    howStep2Desc: "हमारा स्वचालित डिसीजन इंजन डेटाबेस में उपलब्ध सभी सरकारी योजनाओं के पात्रता नियमों से आपके प्रोफाइल का मिलान करता है।",
     howStep3Title: "3. योजना लाभ देखें व आवेदन करें",
     howStep3Desc: "पात्र योजनाओं के वित्तीय लाभ की समीक्षा करें और संबंधित मंत्रालय के आधिकारिक पोर्टल पर सीधे जाएं।",
 
@@ -323,7 +323,7 @@ const I18N = {
     // Results Section
     resultsHeadingPrefix: "मूल्यांकन परिणाम: आप कुल",
     resultsHeadingSuffix: "योजनाओं के लिए पात्र हैं",
-    resultsCheckedNote: "डेटाबेस में दर्ज सभी 147 सरकारी योजनाओं में से सत्यापित",
+    resultsCheckedNote: "डेटाबेस में दर्ज सरकारी योजनाओं में से सत्यापित",
     btnStartOver: "नया प्रोफाइल जांचें",
     searchPlaceholder: "योजना नाम या कीवर्ड से खोजें (उदा. किसान, पेंशन, ऋण, अनुदान)...",
     btnClear: "सर्च हटाएं",
@@ -335,9 +335,9 @@ const I18N = {
     noEligibleFoundDesc: "कल्याणकारी योजनाएं अक्सर विशिष्ट वर्ग (जैसे विद्यार्थी, वरिष्ठ नागरिक या महिलाएं) के लिए लक्षित होती हैं। परिवार के अन्य सदस्यों का प्रोफाइल जांचने का प्रयास करें।",
 
     // All Schemes Directory View
-    directoryTitle: "सरकारी योजना सार्वजनिक निर्देशिका (147 योजनाएं)",
+    directoryTitle: "सरकारी योजना सार्वजनिक निर्देशिका",
     directorySubtitle: "केंद्रीय एवं राज्य सरकारों के प्रमुख कल्याणकारी कार्यक्रमों की सूची",
-    filterAll: "सभी क्षेत्र (147)",
+    filterAll: "सभी क्षेत्र",
     filterAgri: "कृषि",
     filterHealth: "स्वास्थ्य व बीमा",
     filterEdu: "शिक्षा",
@@ -345,7 +345,7 @@ const I18N = {
     filterSocial: "पेंशन व सुरक्षा",
     filterUrban: "शहरी व वेंडर",
     filterArtisan: "कारीगर व एमएसएमई",
-    directorySearchPlaceholder: "योजना के नाम, कीवर्ड या लाभ द्वारा सभी 147 योजनाएं खोजें...",
+    directorySearchPlaceholder: "योजना के नाम, कीवर्ड या लाभ द्वारा योजनाएं खोजें...",
     btnClearDir: "सर्च हटाएं",
     btnViewMore: "और योजनाएं देखें (+10) ↓",
     dirActiveView: "सक्रिय श्रेणी:",
